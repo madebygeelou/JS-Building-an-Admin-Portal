@@ -26,16 +26,17 @@ async function changeTitle(id){
     let input = document.getElementById('title-edit-' + id)
     let value = input.value
     
-    let response= await fetch('http://127.0.0.1:3001/updateBook')
+    let response = await fetch('http://127.0.0.1:3001/updateBook', {
     method: 'PATCH',
-    headers; {
-        'Content-Type'; 'application/json'
-    }
+    headers: {
+        'Content-Type': 'application/json'
+    },
     body: JSON.stringify({
         id: id,
-        title: value
+        quantity: value
     })
-
+    })
+    
     let responseJSON = await response.json()
 console.log(responseJSON)
 }
