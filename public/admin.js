@@ -23,10 +23,10 @@ booksJSON.forEach(function(book){
 main()
 
 async function changeTitle(id){
-    let input = document.getElementById(index)
+    let input = document.getElementById('title-edit-' + id)
     let value = input.value
     
-    let response= await fetch('http://localhost:3001/updateBook')
+    let response= await fetch('http://127.0.0.1:3001/updateBook')
     method: 'PATCH',
     headers; {
         'Content-Type'; 'application/json'
